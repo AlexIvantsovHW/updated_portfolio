@@ -1,3 +1,8 @@
 export enum ROUTES {
-  MAIN = "/main",
+  MAIN = '/',
+  ABOUT = '/about-me',
+  PORTFOLIO = '/portfolio',
+  EXPERIENCE = '/experience',
+  QUALIFICATION = '/qualification',
+  CONTACT = '/contact-info',
 }
