@@ -5,4 +5,5 @@ export enum ROUTES {
   EXPERIENCE = '/experience',
   QUALIFICATION = '/qualification',
   CONTACT = '/contact-info',
+  LOGIN = '/login',
 }

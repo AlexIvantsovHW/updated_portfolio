@@ -4,7 +4,7 @@ function App() {
   return (
     <i.BrowserRouter>
       <i.BaseLayout>
-        <i.React.Suspense fallback={<div>Loading...</div>}>
+        <i.React.Suspense fallback={<i.LoaderMain />}>
           <i.Routes>
             <i.Route path={i.ROUTES.MAIN} element={<i.Main />} />
             <i.Route path={i.ROUTES.ABOUT} element={<i.About />} />
@@ -15,6 +15,7 @@ function App() {
               path={i.ROUTES.QUALIFICATION}
               element={<i.Qualification />}
             />
+            <i.Route path={i.ROUTES.LOGIN} element={<i.Login />} />
           </i.Routes>
         </i.React.Suspense>
       </i.BaseLayout>

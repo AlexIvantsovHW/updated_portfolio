@@ -14,7 +14,7 @@ export const Header = () => {
     setAnchorEl(null)
   }
   return (
-    <div className="w-full h-fit">
+    <div className="w-full h-fit  ">
       <div className="w-full h-fit hidden md:block">
         <i.Box>
           <i.BottomNavigation
@@ -28,9 +28,9 @@ export const Header = () => {
               return (
                 <i.BottomNavigationAction
                   key={idx}
+                  style={{ color: 'black' }}
                   label={el.title}
                   icon={<el.icon />}
-                  className="text-black"
                   onClick={() => navigate(el.route)}
                 />
               )
