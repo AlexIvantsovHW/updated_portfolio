@@ -1,9 +1,17 @@
 import { ROUTES } from '../../../shared/helpers'
-
-export const headerList: { title: string; icon: string; route: string }[] = [
-  { title: 'About me', icon: '', route: ROUTES.ABOUT },
-  { title: 'Portfolio', icon: '', route: ROUTES.PORTFOLIO },
-  { title: 'EXPERIENCE', icon: '', route: ROUTES.EXPERIENCE },
-  { title: 'QUALIFICATION', icon: '', route: ROUTES.QUALIFICATION },
-  { title: 'CONTACT INFO', icon: '', route: ROUTES.CONTACT },
+import PersonIcon from '@mui/icons-material/Person'
+import WorkIcon from '@mui/icons-material/Work'
+import Battery6BarIcon from '@mui/icons-material/Battery6Bar'
+import ImportContactsIcon from '@mui/icons-material/ImportContacts'
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone'
+export const headerList: { title: string; icon: any; route: string }[] = [
+  { title: 'About me', icon: PersonIcon, route: ROUTES.ABOUT },
+  { title: 'Portfolio', icon: WorkIcon, route: ROUTES.PORTFOLIO },
+  { title: 'Experience', icon: Battery6BarIcon, route: ROUTES.EXPERIENCE },
+  {
+    title: 'Qualification',
+    icon: ImportContactsIcon,
+    route: ROUTES.QUALIFICATION,
+  },
+  { title: 'Contact Info', icon: PhoneIphoneIcon, route: ROUTES.CONTACT },
 ]
