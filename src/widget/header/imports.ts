@@ -8,7 +8,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useNavigate } from 'react-router-dom'
-
+import { imgs } from '../../shared/assets'
 export {
   headerList,
   Button,
@@ -20,4 +20,5 @@ export {
   BottomNavigation,
   BottomNavigationAction,
   useNavigate,
+  imgs,
 }

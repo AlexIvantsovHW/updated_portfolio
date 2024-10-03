@@ -19,11 +19,21 @@ export const Header = () => {
         <i.Box>
           <i.BottomNavigation
             showLabels
+            style={{ backgroundColor: 'transparent' }}
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue)
-            }}
+            }} /* 'rgba(128, 128, 128, 0.3) */
           >
+            {' '}
+            <img
+              src={i.imgs.logo}
+              alt="logo"
+              width={60}
+              height={40}
+              className="cursor-pointer"
+              onClick={() => navigate('/')}
+            />
             {i.headerList.map((el, idx) => {
               return (
                 <i.BottomNavigationAction
@@ -38,8 +48,16 @@ export const Header = () => {
           </i.BottomNavigation>
         </i.Box>
       </div>
-      <div className="flex md:hidden">
+      <div className="flex md:hidden justify-between">
         {' '}
+        <img
+          src={i.imgs.logo}
+          alt="logo"
+          width={60}
+          height={40}
+          className="cursor-pointer"
+          onClick={() => navigate('/')}
+        />
         <i.Button
           id="basic-button"
           aria-controls={open ? 'basic-menu' : undefined}
