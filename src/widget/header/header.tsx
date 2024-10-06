@@ -1,11 +1,14 @@
-import { Icon, IconButton } from '@mui/material'
 import * as i from './imports'
+
 export const Header = () => {
   /* ------------STATE------------ */
-  const [value, setValue] = i.useState(0)
+
   const [anchorEl, setAnchorEl] = i.useState<null | HTMLElement>(null)
+  const [hoveredIconIdx, setHoveredIconIdx] = i.useState<number | null>(null)
+
   /* ------------HOOKS------------ */
   const navigate = i.useNavigate()
+
   /* ------------FUNCTIONS------------ */
   const open = Boolean(anchorEl)
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -14,27 +17,39 @@ export const Header = () => {
   const handleClose = () => {
     setAnchorEl(null)
   }
+
   return (
-    <div className="w-full h-fit  fixed t-0 l-0 z-50">
+    <div className="w-full h-fit fixed t-0 l-0 z-50">
       <div className="w-full h-fit hidden md:block">
         <div className="w-full h-[60px] flex items-center justify-between px-[25px] py-[10px]">
-          <img
-            src={i.imgs.logo}
-            alt="logo"
-            width={40}
-            height={30}
-            className="cursor-pointer"
+          <i.PublicTwoToneIcon
+            style={{ fill: 'white', cursor: 'pointer' }}
             onClick={() => navigate('/')}
           />
           {i.headerList.map((el, idx) => {
             return (
-              <div key={idx}>
+              <div
+                key={idx}
+                onMouseEnter={() => setHoveredIconIdx(idx)}
+                onMouseLeave={() => setHoveredIconIdx(null)}
+              >
                 <button
                   onClick={() => navigate(el.route)}
                   className="flex items-center justify-center gap-[10px]"
                 >
-                  <el.icon color="warning" />{' '}
-                  <span className="text-white">
+                  <el.icon
+                    style={{
+                      fill: hoveredIconIdx === idx ? 'gray' : 'white',
+                      cursor: 'pointer',
+                    }}
+                  />
+                  <span
+                    className="text-white"
+                    style={{
+                      color: hoveredIconIdx === idx ? 'gray' : 'white',
+                      cursor: 'pointer',
+                    }}
+                  >
                     {el.title.toLocaleUpperCase()}
                   </span>
                 </button>
@@ -44,7 +59,6 @@ export const Header = () => {
         </div>
       </div>
       <div className="flex md:hidden justify-between">
-        {' '}
         <img
           src={i.imgs.logo}
           alt="logo"
@@ -74,8 +88,13 @@ export const Header = () => {
           {i.headerList.map((el, idx) => {
             return (
               <i.MenuItem key={idx} onClick={() => navigate(el.route)}>
-                {<el.icon />}
-                {el.title}
+                <el.icon
+                  style={{
+                    fill: hoveredIconIdx === idx ? 'gray' : 'white',
+                  }}
+                  onMouseEnter={() => setHoveredIconIdx(idx)}
+                  onMouseLeave={() => setHoveredIconIdx(null)}
+                />
               </i.MenuItem>
             )
           })}

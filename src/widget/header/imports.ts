@@ -9,6 +9,8 @@ import MenuItem from '@mui/material/MenuItem'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useNavigate } from 'react-router-dom'
 import { imgs } from '../../shared/assets'
+
+import PublicTwoToneIcon from '@mui/icons-material/PublicTwoTone'
 export {
   headerList,
   Button,
@@ -20,5 +22,6 @@ export {
   BottomNavigation,
   BottomNavigationAction,
   useNavigate,
+  PublicTwoToneIcon,
   imgs,
 }

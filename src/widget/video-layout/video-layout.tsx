@@ -1,3 +1,4 @@
+import { CircularProgress } from '@mui/material'
 import { useState } from 'react'
 
 export const VideoLayout: React.FC<{
@@ -13,8 +14,8 @@ export const VideoLayout: React.FC<{
   return (
     <div className="relative w-full h-full">
       {isLoading && (
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-          Загрузка
+        <div className="w-full h-full flex items-center justify-center bg-black">
+          <CircularProgress />
         </div>
       )}
       <video
