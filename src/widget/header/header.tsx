@@ -1,3 +1,4 @@
+import { Icon, IconButton } from '@mui/material'
 import * as i from './imports'
 export const Header = () => {
   /* ------------STATE------------ */
@@ -14,39 +15,33 @@ export const Header = () => {
     setAnchorEl(null)
   }
   return (
-    <div className="w-full h-fit  ">
+    <div className="w-full h-fit  fixed t-0 l-0 z-50">
       <div className="w-full h-fit hidden md:block">
-        <i.Box>
-          <i.BottomNavigation
-            showLabels
-            style={{ backgroundColor: 'transparent' }}
-            value={value}
-            onChange={(event, newValue) => {
-              setValue(newValue)
-            }} /* 'rgba(128, 128, 128, 0.3) */
-          >
-            {' '}
-            <img
-              src={i.imgs.logo}
-              alt="logo"
-              width={60}
-              height={40}
-              className="cursor-pointer"
-              onClick={() => navigate('/')}
-            />
-            {i.headerList.map((el, idx) => {
-              return (
-                <i.BottomNavigationAction
-                  key={idx}
-                  style={{ color: 'black' }}
-                  label={el.title}
-                  icon={<el.icon />}
+        <div className="w-full h-[60px] flex items-center justify-between px-[25px] py-[10px]">
+          <img
+            src={i.imgs.logo}
+            alt="logo"
+            width={40}
+            height={30}
+            className="cursor-pointer"
+            onClick={() => navigate('/')}
+          />
+          {i.headerList.map((el, idx) => {
+            return (
+              <div key={idx}>
+                <button
                   onClick={() => navigate(el.route)}
-                />
-              )
-            })}
-          </i.BottomNavigation>
-        </i.Box>
+                  className="flex items-center justify-center gap-[10px]"
+                >
+                  <el.icon color="warning" />{' '}
+                  <span className="text-white">
+                    {el.title.toLocaleUpperCase()}
+                  </span>
+                </button>
+              </div>
+            )
+          })}
+        </div>
       </div>
       <div className="flex md:hidden justify-between">
         {' '}
