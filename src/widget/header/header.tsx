@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import * as i from './imports'
 
 export const Header = () => {
@@ -34,7 +35,10 @@ export const Header = () => {
                 onMouseLeave={() => setHoveredIconIdx(null)}
               >
                 <button
-                  onClick={() => navigate(el.route)}
+                  onClick={() => {
+                    navigate(el.route)
+                    localStorage.setItem('location', idx.toString())
+                  }}
                   className="flex items-center justify-center gap-[10px]"
                 >
                   <el.icon
@@ -87,7 +91,13 @@ export const Header = () => {
         >
           {i.headerList.map((el, idx) => {
             return (
-              <i.MenuItem key={idx} onClick={() => navigate(el.route)}>
+              <i.MenuItem
+                key={idx}
+                onClick={() => {
+                  useRef(null)
+                  navigate(el.route)
+                }}
+              >
                 <el.icon
                   style={{
                     fill: hoveredIconIdx === idx ? 'gray' : 'white',

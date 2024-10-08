@@ -1,3 +1,9 @@
 import { VideoLayout } from '../main/imports'
 import video from '../../shared/assets/video/contact.mp4'
-export { VideoLayout, video }
+import {
+  ExpandCircleDownIcon,
+  scrollToSection,
+  useRef,
+} from '../qualification/imports'
+
+export { VideoLayout, video, scrollToSection, useRef, ExpandCircleDownIcon }
