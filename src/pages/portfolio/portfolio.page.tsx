@@ -1,11 +1,10 @@
-import { useEffect } from 'react'
 import * as i from './imports'
-import { PortfolioWidget } from '../../widget/portfolio-widget'
+
 const PortfolioPage = () => {
   const Ref1 = i.useRef<HTMLDivElement>(null)
   const Ref2 = i.useRef<HTMLDivElement>(null)
   const Ref3 = i.useRef<HTMLDivElement>(null)
-  useEffect(() => {
+  i.useEffect(() => {
     console.log('Component mounted')
     return () => {
       i.scrollToSection(Ref1)
@@ -33,7 +32,7 @@ const PortfolioPage = () => {
           </button>
         </div>
       </i.VideoLayout>
-      <PortfolioWidget Ref1={Ref1} Ref2={Ref2} Ref3={Ref3} />
+      <i.PortfolioWidget Ref1={Ref1} Ref2={Ref2} Ref3={Ref3} />
     </div>
   )
 }
